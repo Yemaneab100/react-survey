@@ -18,6 +18,27 @@ function Main({ initialFormState, formState, setFormState }) {
     if (targetName === 'name') {
       setFormState({ ...formState, fullName: targetValue })
     }
+    if (targetName === 'consistency') {
+      setFormState({ ...formState, consistency: targetValue })
+    }
+    if (targetName === 'spend-time') {
+      setFormState({ ...formState, spendTime: targetValue })
+    }
+    if (targetName === 'review') {
+      setFormState({ ...formState, review: targetValue })
+    }
+    if (targetName === 'username') {
+      setFormState({ ...formState, username: targetValue })
+    }
+    if (targetName === 'email') {
+      setFormState({ ...formState, email: targetValue })
+    }
+    if (targetName === 'spend-time-worst') {
+      setFormState({ ...formState, worstFeatures: targetValue })
+    }
+    if (targetName === 'bestFeatures') {
+      setFormState({ ...formState, bestFeatures: targetValue })
+    }
   }
 
   return (
@@ -28,7 +49,7 @@ function Main({ initialFormState, formState, setFormState }) {
       </section>
 
       <section className="main__form">
-        <form class="form">
+        <form className="form" onSubmit={handleSubmit}>
           <h2>Tell us what you think about your rubber duck!</h2>
           <div className="form__group">
             <h3>
@@ -38,25 +59,49 @@ function Main({ initialFormState, formState, setFormState }) {
             <ul>
               <li>
                 <label>
-                  <input name="spend-time" type="checkbox" value="swimming" />{' '}
+                  <input
+                    name="bestFeatures"
+                    type="checkbox"
+                    value="Yellow"
+                    checked={formState.bestFeatures === 'Yellow'}
+                    onChange={handleChange}
+                  />{' '}
                   It's Yellow
                 </label>
               </li>
               <li>
                 <label>
-                  <input name="spend-time" type="checkbox" value="bathing" />
+                  <input
+                    name="bestFeatures"
+                    type="checkbox"
+                    value="Squeaks"
+                    checked={formState.bestFeatures === 'Squeaks'}
+                    onChange={handleChange}
+                  />
                   It's Squeaks
                 </label>
               </li>
               <li>
                 <label>
-                  <input name="spend-time" type="checkbox" value="chatting" />{' '}
+                  <input
+                    name="bestFeatures"
+                    type="checkbox"
+                    value="logo"
+                    checked={formState.bestFeatures === 'logo'}
+                    onChange={handleChange}
+                  />{' '}
                   It has a logo.
                 </label>
               </li>
               <li>
                 <label>
-                  <input name="spend-time" type="checkbox" value="noTime" />
+                  <input
+                    name="bestFeatures"
+                    type="checkbox"
+                    value="isBig"
+                    checked={formState.bestFeatures === 'isBig'}
+                    onChange={handleChange}
+                  />
                   It is big
                 </label>
               </li>
@@ -69,99 +114,103 @@ function Main({ initialFormState, formState, setFormState }) {
             <ul>
               <li>
                 <label>
-                  <input name="spend-time" type="checkbox" value="swimming" />{' '}
+                  <input
+                    name="spend-time-worst"
+                    type="checkbox"
+                    value="swimming"
+                    checked={formState.worstFeatures === 'swimming'}
+                    onChange={handleChange}
+                  />{' '}
                   It's Yellow
                 </label>
               </li>
               <li>
                 <label>
-                  <input name="spend-time" type="checkbox" value="bathing" />
+                  <input
+                    name="spend-time-worst"
+                    type="checkbox"
+                    value="bathing"
+                    checked={formState.worstFeatures === 'bathing'}
+                    onChange={handleChange}
+                  />
                   It's Squeaks
                 </label>
               </li>
               <li>
                 <label>
-                  <input name="spend-time" type="checkbox" value="chatting" />{' '}
+                  <input
+                    name="spend-time-worst"
+                    type="checkbox"
+                    value="chatting"
+                    checked={formState.worstFeatures === 'chatting'}
+                    onChange={handleChange}
+                  />{' '}
                   It has a logo.
                 </label>
               </li>
               <li>
                 <label>
-                  <input name="spend-time" type="checkbox" value="noTime" />
+                  <input
+                    name="spend-time-worst"
+                    type="checkbox"
+                    value="noTime"
+                    checked={formState.worstFeatures === 'noTime'}
+                    onChange={handleChange}
+                  />
                   It is big
                 </label>
               </li>
             </ul>
           </div>
-          <div class="form__group radio">
+          <div className="form__group radio">
             <h3>How do you rate your rubber duck consistency?</h3>
             {/* <!-- Radio inputs go here --> */}
             <ul>
               <li>
-                <input id="color-one" type="radio" name="color" value="1" />
-                <label for="color-one">1</label>
+                <input
+                  id="consistency-one"
+                  type="radio"
+                  name="consistency"
+                  value="1"
+                  onChange={handleChange}
+                />
+                <label htmlFor="consistency-one">1</label>
               </li>
               <li>
-                <input id="color-two" type="radio" name="color" value="2" />
-                <label for="color-two">2</label>
+                <input
+                  id="consistency-two"
+                  type="radio"
+                  name="consistency"
+                  value="2"
+                  onChange={handleChange}
+                />
+                <label htmlFor="consistency-two">2</label>
               </li>
               <li>
-                <input id="color-three" type="radio" name="color" value="3" />
-                <label for="color-three">3</label>
+                <input
+                  id="consistency-three"
+                  type="radio"
+                  name="consistency"
+                  value="3"
+                  onChange={handleChange}
+                />
+                <label htmlFor="consistency-three">3</label>
               </li>
               <li>
-                <input id="color-four" type="radio" name="color" value="4" />
+                <input
+                  id="consistency-four"
+                  type="radio"
+                  name="consistency"
+                  value="4"
+                  onChange={handleChange}
+                />
 
-                <label for="color-four">4</label>
-              </li>
-            </ul>
-
-            <h3>How do you rate your rubber duck colour?</h3>
-            {/* <!-- Radio inputs go here --> */}
-            <ul>
-              <li>
-                <input id="color-one" type="radio" name="color" value="1" />
-                <label for="color-one">1</label>
-              </li>
-              <li>
-                <input id="color-two" type="radio" name="color" value="2" />
-                <label for="color-two">2</label>
-              </li>
-              <li>
-                <input id="color-three" type="radio" name="color" value="3" />
-                <label for="color-three">3</label>
-              </li>
-              <li>
-                <input id="color-four" type="radio" name="color" value="4" />
-
-                <label for="color-four">4</label>
-              </li>
-            </ul>
-
-            <h3>How do you rate your rubber duck logo?</h3>
-            {/* <!-- Radio inputs go here --> */}
-            <ul>
-              <li>
-                <input id="color-one" type="radio" name="color" value="1" />
-                <label for="color-one">1</label>
-              </li>
-              <li>
-                <input id="color-two" type="radio" name="color" value="2" />
-                <label for="color-two">2</label>
-              </li>
-              <li>
-                <input id="color-three" type="radio" name="color" value="3" />
-                <label for="color-three">3</label>
-              </li>
-              <li>
-                <input id="color-four" type="radio" name="color" value="4" />
-
-                <label for="color-four">4</label>
+                <label htmlFor="consistency-four">4</label>
               </li>
             </ul>
           </div>
 
-          <div class="form__group">
+          <div className="form__group">
             <h3>How do you like to spend time with your rubber duck</h3>
             {/* <!-- checkboxes go here --> */}
 
@@ -195,20 +244,40 @@ function Main({ initialFormState, formState, setFormState }) {
 
           <label>
             What else have you got to say about your rubber duck?
-            <textarea name="review" cols="30" rows="10"></textarea>
+            <textarea
+              name="review"
+              cols="30"
+              rows="10"
+              onChange={handleChange}
+              value={formState.comments}
+            ></textarea>
           </label>
 
           <label>
             Put your name here (if you feel like it):
-            <input type="text" name="username" value="" />
+            <input
+              type="text"
+              name="username"
+              onChange={handleChange}
+              value={formState.username}
+            />
           </label>
 
           <label>
             Leave us your email pretty please??
-            <input type="email" name="email" value="" />
+            <input
+              type="email"
+              name="email"
+              onChange={handleChange}
+              value={formState.email}
+            />
           </label>
 
-          <input class="form__submit" type="submit" value="Submit Survey!" />
+          <input
+            className="form__submit"
+            type="submit"
+            value="Submit Survey!"
+          />
         </form>
       </section>
     </main>
