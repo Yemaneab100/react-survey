@@ -217,26 +217,46 @@ function Main({ initialFormState, formState, setFormState }) {
             <ul>
               <li>
                 <label>
-                  <input name="spend-time" type="checkbox" value="swimming" />{' '}
+                  <input
+                    name="spend-time"
+                    type="checkbox"
+                    value="swimming"
+                    onChange={handleChange}
+                  />
                   Swimming
                 </label>
               </li>
               <li>
                 <label>
-                  <input name="spend-time" type="checkbox" value="bathing" />
+                  <input
+                    name="spend-time"
+                    type="checkbox"
+                    value="bathing"
+                    onChange={handleChange}
+                  />
                   Bathing
                 </label>
               </li>
               <li>
                 <label>
-                  <input name="spend-time" type="checkbox" value="chatting" />
+                  <input
+                    name="spend-time"
+                    type="checkbox"
+                    value="chatting"
+                    onChange={handleChange}
+                  />
                   Chatting
                 </label>
               </li>
               <li>
                 <label>
-                  <input name="spend-time" type="checkbox" value="noTime" />I
-                  don't like to spend time with it
+                  <input
+                    name="spend-time"
+                    type="checkbox"
+                    value="noTime"
+                    onChange={handleChange}
+                  />
+                  I don't like to spend time with it
                 </label>
               </li>
             </ul>
@@ -248,8 +268,8 @@ function Main({ initialFormState, formState, setFormState }) {
               name="review"
               cols="30"
               rows="10"
-              onChange={handleChange}
               value={formState.comments}
+              onChange={handleChange}
             ></textarea>
           </label>
 
