@@ -7,8 +7,8 @@ import Main from './components/Main'
 const initialFormState = {
   bestFeatures: '',
   worstFeatures: '',
-  consistency: '',
-  spendTime: 'Swiming',
+  consistency: '-1',
+  spendTime: '',
   review: '',
   username: '',
   email: ''

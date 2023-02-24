@@ -7,13 +7,12 @@ function Main({ initialFormState, formState, setFormState }) {
     event.preventDefault()
     console.log('submited', formState)
     setFormState(initialFormState)
+    event.target.reset()
   }
 
   const handleChange = (event) => {
     const targetValue = event.target.value
     const targetName = event.target.name
-    const targetType = event.target.type
-    const targetChecked = event.target.value
 
     if (targetName === 'name') {
       setFormState({ ...formState, fullName: targetValue })
@@ -108,7 +107,6 @@ function Main({ initialFormState, formState, setFormState }) {
             </ul>
 
             <h3>
-              {' '}
               What would you say are the worst features of your rubber duck
             </h3>
             <ul>
@@ -268,7 +266,7 @@ function Main({ initialFormState, formState, setFormState }) {
               name="review"
               cols="30"
               rows="10"
-              value={formState.comments}
+              value={formState.review}
               onChange={handleChange}
             ></textarea>
           </label>
